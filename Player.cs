@@ -3,18 +3,30 @@ using System;
 
 public class Player : Area2D
 {
+	[Signal]
+	public delegate void Hit();
+
 	[Export]
 	public int Speed = 400;
 	private Vector2 _screenSize;
 
-	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
+    private string _colShapeLoc = "CollisionShape2D";
+
+    // Called when the node enters the scene tree for the first time.
+    public override void _Ready()
 	{
 		_screenSize = GetViewportRect().Size;
-        Hide();
+		Hide();
 	}
 
-	public override void _Process(float delta)
+    public void Start(Vector2 position)
+    {
+        Position = position;
+        Show();
+        GetNode<CollisionShape2D>(_colShapeLoc).Disabled = false;
+    }
+
+    public override void _Process(float delta)
 	{
 		var velocity = new Vector2();
 
@@ -51,4 +63,11 @@ public class Player : Area2D
 			animatedSprite.FlipV = velocity.y > 0;
 		}
 	}
+
+    public void OnPlayerBodyEntered(PhysicsBody2D body)
+    {
+        Hide();
+        EmitSignal("Hit");
+        GetNode<CollisionShape2D>(_colShapeLoc).SetDeferred("disabled", true);
+    }
 }
