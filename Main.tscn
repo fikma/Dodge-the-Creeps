@@ -1,0 +1,24 @@
+[gd_scene format=2]
+
+[node name="Main" type="Node2D"]
+
+[node name="MobTimer" type="Timer" parent="."]
+wait_time = 0.5
+__meta__ = {
+"_editor_description_": "untuk mengatur seberapa seringkah Mob diSpawn"
+}
+
+[node name="ScoreTimer" type="Timer" parent="."]
+__meta__ = {
+"_editor_description_": "Untuk menambah score ditiap detiknya."
+}
+
+[node name="StartTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+__meta__ = {
+"_editor_description_": "Delay sebelum game dimulai."
+}
+
+[node name="StartPosition" type="Position2D" parent="."]
+position = Vector2( 240, 450 )
