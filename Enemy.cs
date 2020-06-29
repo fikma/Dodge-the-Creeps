@@ -1,4 +1,4 @@
-﻿using Godot;
+using Godot;
 
 public class Enemy : RigidBody2D
 {
@@ -17,8 +17,8 @@ public class Enemy : RigidBody2D
 
 	}
 
-    private void _on_Visibility_screen_exited()
-    {
-        QueueFree();
-    }
+	private void _on_Visibility_screen_exited()
+	{
+		QueueFree();
+	}
 }

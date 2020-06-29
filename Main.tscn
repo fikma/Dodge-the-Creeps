@@ -1,4 +1,9 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 1.07349, 3.49067, 0, 0, 0, 0, 482.159, 2.59977, 0, 0, 0, 0, 476.894, 717.156, 0, 0, 0, 0, -4.19147, 720.72, 0, 0, 0, 0, 1.07349, 1.70887 )
+}
 
 [node name="Main" type="Node2D"]
 
@@ -22,3 +27,10 @@ __meta__ = {
 
 [node name="StartPosition" type="Position2D" parent="."]
 position = Vector2( 240, 450 )
+
+[node name="MobPath" type="Path2D" parent="."]
+curve = SubResource( 1 )
+
+[node name="MobSpawnLocation" type="PathFollow2D" parent="MobPath"]
+position = Vector2( 1.07349, 3.49067 )
+rotation = -0.00185191
