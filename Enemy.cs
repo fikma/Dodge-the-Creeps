@@ -10,10 +10,12 @@ public class Enemy : RigidBody2D
 
 	private string[] _mobTypes = { "walk", "swim", "fly" };
 
+	static private System.Random _random = new System.Random();
+
 	public override void _Ready()
 	{
 		GetNode<AnimatedSprite>("AnimatedSprite").Animation =
-			_mobTypes[GD.Randi() % _mobTypes.Length];
+			_mobTypes[_random.Next(0, _mobTypes.Length)];
 
 	}
 
