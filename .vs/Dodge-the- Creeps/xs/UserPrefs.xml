@@ -1,0 +1,27 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workbench ActiveDocument="HUD.cs">
+    <Files>
+      <File FileName="Player.cs" Line="74" Column="1" />
+      <File FileName="Enemy.cs" Line="9" Column="14" />
+      <File FileName="Main.cs" Line="49" Column="20" />
+      <File FileName="HUD.cs" Line="3" Column="14" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Dodge-the- Creeps" expanded="True">
+            <Node name="Dodge-the- Creeps" expanded="True">
+              <Node name="HUD.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
