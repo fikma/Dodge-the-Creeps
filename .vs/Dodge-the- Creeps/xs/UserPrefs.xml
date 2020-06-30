@@ -1,10 +1,10 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workbench ActiveDocument="Main.cs">
     <Files>
-      <File FileName="Player.cs" Line="74" Column="1" />
-      <File FileName="Enemy.cs" Line="9" Column="14" />
       <File FileName="Main.cs" Line="1" Column="1" />
-      <File FileName="HUD.cs" Line="8" Column="30" />
+      <File FileName="Player.cs" Line="53" Column="49" />
+      <File FileName="Enemy.cs" Line="1" Column="1" />
+      <File FileName="HUD.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">

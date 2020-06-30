@@ -38,6 +38,9 @@ public class Main : Node2D
 	{
 		_scoreNode.Stop();
 		_mobNode.Stop();
+
+		_HUDNode.ShowGameOver();
+		GetTree().CallGroup("mobs", "queue_free");
 	}
 
 	public void NewGame()
@@ -46,6 +49,9 @@ public class Main : Node2D
 		GetNode<Player>("Player").Start(
 			GetNode<Position2D>("StartPosition").Position);
 		_startNode.Start();
+
+		_HUDNode.UpdateScore(score);
+		_HUDNode.ShowMessage("Get ready!");
 	}
 
 	public void _on_MobTimer_timeout()
@@ -59,12 +65,14 @@ public class Main : Node2D
 		mobInstance.Rotation = direction;
 
 		mobInstance.LinearVelocity =
-            new Vector2(RandRange(mobInstance.MinSpeed, mobInstance.MaxSpeed), 0).Rotated(direction);
+			new Vector2(RandRange(mobInstance.MinSpeed, mobInstance.MaxSpeed), 0).Rotated(direction);
 	}
 
 	public void _on_ScoreTimer_timeout()
 	{
 		score += 1;
+
+		_HUDNode.UpdateScore(score);
 	}
 
 

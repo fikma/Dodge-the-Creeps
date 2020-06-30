@@ -1,4 +1,4 @@
-﻿using Godot;
+using Godot;
 
 public class HUD : CanvasLayer
 {
@@ -8,15 +8,15 @@ public class HUD : CanvasLayer
 	private Timer _messageTimer;
 	private Label _messageLabel;
 
-    private Button _startButton;
+	private Button _startButton;
 
 	public override void _Ready()
 	{
 		_messageTimer = GetNode<Timer>("MessageTimer");
 		_messageLabel = GetNode<Label>("MessageLabel");
 
-        _startButton = GetNode<Button>("StartButton");
-    }
+		_startButton = GetNode<Button>("StartButton");
+	}
 
 	public void ShowMessage(string text)
 	{
@@ -45,13 +45,13 @@ public class HUD : CanvasLayer
 	
 	public void OnStartButtonPressed()
 	{
-        _startButton.Hide();
-        EmitSignal("StartGame");
+		_startButton.Hide();
+		EmitSignal("StartGame");
 	}
 	
 	public void OnMessageTimerTimeout()
 	{
-        _messageLabel.Hide();
+		_messageLabel.Hide();
 	}
 }
 

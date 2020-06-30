@@ -50,14 +50,15 @@ public class Player : Area2D
 			y: Mathf.Clamp(Position.y, 0, _screenSize.y)
 		);
 
-		if (velocity.x != 0)
-		{
-			animatedSprite.Animation = "walk";
-			animatedSprite.FlipV = false;
+        if (Math.Abs(velocity.x) > Mathf.Epsilon)
+        {
+            animatedSprite.Animation = "walk";
+            animatedSprite.FlipV = false;
 
-			animatedSprite.FlipH = velocity.x < 0;
-		}
-		else if(velocity.y != 0)
+            animatedSprite.FlipH = velocity.x < 0;
+        }
+
+        else if (Math.Abs(velocity.y) > Mathf.Epsilon) 
 		{
 			animatedSprite.Animation = "up";
 			animatedSprite.FlipV = velocity.y > 0;
